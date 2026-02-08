@@ -1,20 +1,13 @@
 
-export interface Module {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  path: string;
+export enum LaunchState {
+  WELCOME = 'WELCOME',
+  GIMMICK = 'GIMMICK',
+  COUNTDOWN = 'COUNTDOWN',
+  CELEBRATION = 'CELEBRATION',
+  FINISHED = 'FINISHED'
 }
 
-export interface PromptExample {
-  title: string;
-  prompt: string;
-  category: string;
-}
-
-export interface ResourceItem {
-  name: string;
-  type: 'PDF' | 'DOCX' | 'PPTX' | 'LINK';
-  description: string;
+export interface Quote {
+  text: string;
+  author: string;
 }

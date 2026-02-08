@@ -1,5 +1,7 @@
 {
-  "name": "EduAI Guru | AI dalam Pendidikan",
-  "description": "Portal pembelajaran digital untuk guru-guru Malaysia bagi menguasai AI, ChatGPT, dan GPT pendidikan selaras dengan transformasi digital KPM.",
-  "requestFramePermissions": []
+  "name": "Portal Perasmian Kurikulum SKPTEN",
+  "description": "A grand launch portal for the SKPT Curriculum website featuring cinematic transitions, music, and an interactive launch gimmick.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
 }

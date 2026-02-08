@@ -1,82 +1,68 @@
 
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduAI Guru | Peneraju Revolusi Pendidik Digital</title>
+    <title>Majlis Pelancaran Portal Unit Kurikulum SK Pekan Tenom</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #0ea5e9;
-            --accent: #8b5cf6;
+            --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+            --secondary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
         }
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #ffffff;
-            color: #1e293b;
-            overflow-x: hidden;
+            font-family: 'Outfit', sans-serif;
+            background-color: #020617;
+            overflow: hidden;
+            color: white;
         }
-        .aura-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.02) 0%, transparent 100%);
+        .font-impact {
+            font-family: 'Bebas Neue', cursive;
         }
-        .grid-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background-image: linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
-            background-size: 40px 40px;
+        .font-grand {
+            font-family: 'Cinzel Decorative', serif;
         }
-        .glass-premium {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        .text-gradient-vibrant {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+        .text-glow {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(to bottom, #ffffff 30%, #93c5fd 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .btn-vibrant {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
         }
-        .btn-vibrant:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.6);
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
         }
-        .card-reveal {
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
         }
-        .card-reveal:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
-        }
-        @keyframes float-slow {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float-slow 6s ease-in-out infinite;
+        .mesh-gradient {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(223,100%,12%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,100%,15%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(220,100%,10%,1) 0, transparent 50%);
         }
     </style>
 <script type="importmap">
@@ -84,16 +70,17 @@
   "imports": {
     "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+    "framer-motion": "https://esm.sh/framer-motion@^12.33.0",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body>
-    <div class="aura-bg"></div>
-    <div class="grid-pattern"></div>
+<body class="mesh-gradient">
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>

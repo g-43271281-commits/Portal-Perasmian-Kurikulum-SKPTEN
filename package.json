@@ -1,5 +1,5 @@
 {
-  "name": "eduai-guru-|-ai-dalam-pendidikan",
+  "name": "portal-perasmian-kurikulum-skpten",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "react": "^19.2.4",
+    "lucide-react": "^0.563.0",
     "react-dom": "^19.2.4",
-    "lucide-react": "^0.563.0"
+    "framer-motion": "^12.33.0",
+    "canvas-confetti": "^1.9.4",
+    "@google/genai": "^1.40.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
