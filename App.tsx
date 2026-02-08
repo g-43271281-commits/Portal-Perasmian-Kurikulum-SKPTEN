@@ -72,6 +72,23 @@ const StarField = () => {
   );
 };
 
+const AnimatedLogo = ({ className }: { className?: string }) => (
+  <motion.div 
+    animate={{ y: [0, -15, 0], rotateY: [0, 360] }} 
+    transition={{ 
+      y: { duration: 5, repeat: Infinity, ease: "easeInOut" }, 
+      rotateY: { duration: 20, repeat: Infinity, ease: "linear" } 
+    }} 
+    className="flex items-center justify-center relative"
+  >
+     <img 
+       src={SCHOOL_LOGO_URL} 
+       alt="Animated Logo" 
+       className={`${className} object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]`} 
+     />
+  </motion.div>
+);
+
 const App: React.FC = () => {
   const [state, setState] = useState<LaunchState>(LaunchState.WELCOME);
   const [isMuted, setIsMuted] = useState(false);
@@ -208,17 +225,7 @@ const App: React.FC = () => {
           {state === LaunchState.WELCOME && (
             <motion.div key="welcome" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="text-center space-y-12 max-w-5xl pb-20 md:pb-32">
               <motion.div variants={itemVariants} className="relative inline-block">
-                <motion.div 
-                  animate={{ y: [0, -15, 0], rotateY: [0, 360] }} 
-                  transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut" }, rotateY: { duration: 20, repeat: Infinity, ease: "linear" } }} 
-                  className="flex items-center justify-center"
-                >
-                   <img 
-                     src={SCHOOL_LOGO_URL} 
-                     alt="Logo Welcome" 
-                     className="w-32 h-32 md:w-56 md:h-56 object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]" 
-                   />
-                </motion.div>
+                <AnimatedLogo className="w-32 h-32 md:w-56 md:h-56" />
                 <div className="absolute inset-[-20%] bg-blue-500/10 blur-[70px] -z-10 rounded-full animate-pulse" />
               </motion.div>
 
@@ -292,9 +299,12 @@ const App: React.FC = () => {
                 <motion.div animate={{ rotate: [0, 20, -20, 0], scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 3 }}>
                   <Sparkles className="w-12 h-12 text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
                 </motion.div>
-                <div className="w-28 h-28 md:w-40 md:h-40 glass rounded-[3rem] border-2 border-white/20 p-6 bg-white/5 shadow-2xl flex items-center justify-center">
-                   <img src={SCHOOL_LOGO_URL} alt="Logo Celebrated" className="w-full h-full object-contain" />
+                
+                <div className="relative">
+                  <AnimatedLogo className="w-28 h-28 md:w-40 md:h-40" />
+                  <div className="absolute inset-[-10%] bg-blue-500/10 blur-[40px] -z-10 rounded-full animate-pulse" />
                 </div>
+
                 <motion.div animate={{ rotate: [0, -20, 20, 0], scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}>
                   <Trophy className="w-12 h-12 text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
                 </motion.div>
